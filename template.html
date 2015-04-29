@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- metadata to allow the reader to render the comics correctly. these should not be changed. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="-1">
+  <meta name="robots" content="noindex">
+
+  <!-- title of the comic -->
+  <title>Example Comic</title>
+
+  <!-- core css library, defining default styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- each comic is wrapped in a `ec-comic` container -->
+<ec-comic id="comic">
+  <!-- each step is wrapped in a `ec-page` container, which a class of `step` -->
+  <!-- `ec-page`s contain `img` tags with a srcset property. srcset is a new feature of HTML5 which means we can serve half-sized images to lower resolution devices  -->
+  <ec-page id="step-01" class="step"><img src="images/fullsized1.jpg" srcset="images-half/halfsized1.jpg 1x, images/fullsized1.jpg 2x" alt=""></ec-page>
+  <ec-page id="step-02" class="step"><img src="images/fullsized2.jpg" srcset="images-half/halfsized2.jpg 1x, images/fullsized2.jpg 2x" alt=""></ec-page>
+  <ec-page id="step-03" class="step"><img src="images/fullsized3.jpg" srcset="images-half/halfsized3.jpg 1x, images/fullsized3.jpg 2x" alt=""></ec-page>
+</ec-comic>
+
+<!-- comics are then declared finished with an `ec-curtains` tag -->
+<ec-curtains></ec-curtains>
+
+<!-- these are core libraries, which will be injected into to page by the reader -->
+<script src="js/electricomics.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/hammer.min.js"></script>
+
+</body>
+</html>
